@@ -1,0 +1,36 @@
+\documentclass[a4paper]{article}
+\usepackage{fullpage}
+
+\title{ADS Lab 2 Clustering Data}
+\author{Carolyne Smith}
+\date{5 Feb 2018}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\maketitle
+
+\section{Cluster Data}
+\subsection{Data}
+<<>>=
+#setwd("//nas-csdm.rgu.ac.uk/csdm-H/Students/17/1712664/Carolynes Documents/Advanced Data Science/Lab 02")
+
+data(ruspini, package="cluster")
+df <- ruspini
+
+#shuffle the rows
+df <- df[sample(1:nrow(df)),]
+
+#check names, nrow and ncols of the data frame
+names(df)
+nrow(df)
+ncol(df)
+
+#plot the data
+#note: pch param is the type of point e.g. triangles in this case
+plot(df$x, df$y, xlab="x", ylab="y", frame=FALSE, col="red", pch=25)
+
+head(df)
+str(df)
+@
+
+\end{document}
